@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="header-title">High Quality Bets</h1>
           <div className="Social-logo-stack">
@@ -29,7 +29,7 @@ function App() {
               <img src={twitter_icon} className="Social-logo" alt="logo" />
           </a>
           </div>
-      </header>
+      </div>
     </div>
   );
 }
