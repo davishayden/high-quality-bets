@@ -1,0 +1,8 @@
+type Bets @model {
+  id: ID!
+  name: String!
+  type: String
+  risk: Int
+  return: Int
+  outcome: Boolean
+}

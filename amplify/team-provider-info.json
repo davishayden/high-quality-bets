@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-highqualitybets-dev-151708-authRole",
+      "UnauthRoleArn": "arn:aws:iam::013426782317:role/amplify-highqualitybets-dev-151708-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::013426782317:role/amplify-highqualitybets-dev-151708-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-highqualitybets-dev-151708-deployment",
+      "UnauthRoleName": "amplify-highqualitybets-dev-151708-unauthRole",
+      "StackName": "amplify-highqualitybets-dev-151708",
+      "StackId": "arn:aws:cloudformation:us-west-2:013426782317:stack/amplify-highqualitybets-dev-151708/8f8efba0-f52c-11ea-8e24-0a8bbb84e71d",
+      "AmplifyAppId": "dv3ewvi9m4m0x"
+    }
+  }
+}
