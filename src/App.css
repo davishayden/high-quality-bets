@@ -3,18 +3,20 @@
 }
 
 .App-logo {
-  height: 20vmin;
+  height: 3vmin;
   pointer-events: none;
 }
 
 .Social-logo {
-  height: 5vmin;
-  padding: 0vmin 3vmin 0vmin 3vmin;
+  height: 3vmin;
+  padding: 0vmin 2vmin 0vmin 0vmin;
+  float: right;
 }
 
 .Social-logo-stack {
   display: flex;
   justify-content: space-between;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,7 +28,7 @@
 
 .App-header {
   background-color: white;
-  min-height: 25vh;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,14 +54,7 @@
   }
 }
 
-.column {
-  float: left;
+.table-header {
+  font-size: calc(10px + 5vmin);
 }
 
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 75%;
-}

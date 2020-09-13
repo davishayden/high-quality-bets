@@ -1,5 +1,5 @@
 //import React from 'react';
-import logo from './HQB_Dice.svg';
+import logo from './HQB_Title_Logo.svg';
 import insta_icon from './Instagram_Icon.svg';
 import twitter_icon from './Twitter_Icon.svg';
 import React, { useEffect, useState } from 'react'
@@ -8,6 +8,7 @@ import { createBets } from './graphql/mutations'
 import { listBetss } from './graphql/queries'
 
 import './App.css';
+import './simple-grid.css'
 
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
@@ -49,65 +50,82 @@ const App = () => {
     }
 
     return (
-        <div className="App">
-            <div className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <h1 className="header-title">High Quality Bets</h1>
-                <div className="Social-logo-stack">
-                    <a
-                        className="App-link"
-                        href="https://www.instagram.com/highqualitybets/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img src={insta_icon} className="Social-logo" alt="logo" />
-                    </a>
-                    <a
-                        className="App-link"
-                        href="https://www.twitter.com/highqualitybets/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img src={twitter_icon} className="Social-logo" alt="logo" />
-                    </a>
-                </div>
-            </div>
-            <div style={styles.container}>
-                <h2>Bets Taken</h2>
-                {
-                    bets.map((bet, index) => (
+            <div className="App">
 
-                        <div key={bet.id ? bet.id : index} style={styles.bet}>
-                            <div className="column left">
-                                <p style={styles.betName}>{bet.name}</p>
+                <div className="App-header">
+                    <div className='container'>
+                    <div className="row">
+                        <div className="col-1">
+                            <div className="row">
+                                <div className="col-10">
+                                    <img src={logo} className="App-logo" alt="logo" />
+                                </div>
                             </div>
-                            <div className="column right">
-                                <p style={styles.betType}>{bet.type}</p>
+
+                        </div>
+
+                        <div className="col-9"></div>
+                        <div className="col-1  hidden-sm">
+
+                        <div className="Social-logo-stack">
+                                <a
+                                    className="App-link"
+                                    href="https://www.instagram.com/highqualitybets/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img src={insta_icon} className="Social-logo" alt="logo" />
+                                </a>
+
+                            <a
+                                className="App-link"
+                                href="https://www.twitter.com/highqualitybets/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img src={twitter_icon} className="Social-logo" alt="logo" />
+                            </a>
                             </div>
                         </div>
-                    ))
-                }
+                    </div>
+                    </div>
+                </div>
+            <h2>Bets Taken</h2>
+
+                <div style={styles.container} >
+                    <table  >
+                        <tr className="table-header">
+                            <th>Bet</th>
+                            <th className='hidden-sm'>Type</th>
+                            <th>Result</th>
+                        </tr>
+                        {
+                            bets.map((bet, index) => (
+                            <tr key={bet.id ? bet.id : index}>
+                                <td className='hidden-sm'>{bet.name}</td>
+                                <td>{bet.type}</td>
+                                <td>win</td>
+                            </tr>
+                            ))
+                        }
+                    </table>
+
+                </div>
             </div>
-        </div>
+
     )
 }
 
 const styles = {
-    container: { width: 400, margin: '0 auto', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'center', padding: 20 },
-    bet: {  marginBottom: 15 },
+    container: { width: 800, margin: '0 auto', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'center', padding: 20 },
+    bet: {  marginBottom: 20 },
     input: { border: 'none', backgroundColor: '#ddd', marginBottom: 10, padding: 8, fontSize: 18 },
     betName: { fontSize: 20 },
     betType: { fontSize: 20 },
     button: { backgroundColor: 'black', color: 'white', outline: 'none', fontSize: 18, padding: '12px 0px' }
 }
 
-class portfolio extends React.Component {
-    render() {
-        return
-        // eslint-disable-next-line no-unused-expressions
 
-    }
-}
 
 /*
                 <input
