@@ -26,7 +26,7 @@
 
 .App-header {
   background-color: white;
-  min-height: 100vh;
+  min-height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,4 +50,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
 }

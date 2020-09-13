@@ -48,8 +48,6 @@ const App = () => {
         }
     }
 
-
-
     return (
         <div className="App">
             <div className="App-header">
@@ -76,6 +74,42 @@ const App = () => {
             </div>
             <div style={styles.container}>
                 <h2>Bets Taken</h2>
+                {
+                    bets.map((bet, index) => (
+
+                        <div key={bet.id ? bet.id : index} style={styles.bet}>
+                            <div className="column left">
+                                <p style={styles.betName}>{bet.name}</p>
+                            </div>
+                            <div className="column right">
+                                <p style={styles.betType}>{bet.type}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    )
+}
+
+const styles = {
+    container: { width: 400, margin: '0 auto', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'center', padding: 20 },
+    bet: {  marginBottom: 15 },
+    input: { border: 'none', backgroundColor: '#ddd', marginBottom: 10, padding: 8, fontSize: 18 },
+    betName: { fontSize: 20 },
+    betType: { fontSize: 20 },
+    button: { backgroundColor: 'black', color: 'white', outline: 'none', fontSize: 18, padding: '12px 0px' }
+}
+
+class portfolio extends React.Component {
+    render() {
+        return
+        // eslint-disable-next-line no-unused-expressions
+
+    }
+}
+
+/*
                 <input
                     onChange={event => setInput('name', event.target.value)}
                     style={styles.input}
@@ -89,35 +123,7 @@ const App = () => {
                     placeholder="Type"
                 />
                 <button style={styles.button} onClick={addBet}>Create Bet</button>
-                {
-                    bets.map((bet, index) => (
-                        <div key={bet.id ? bet.id : index} style={styles.bet}>
-                            <p style={styles.betName}>{bet.name}</p>
-                            <p style={styles.betType}>{bet.type}</p>
-                        </div>
-                    ))
-                }
-            </div>
-        </div>
-    )
-}
-
-const styles = {
-    container: { width: 400, margin: '0 auto', display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'center', padding: 20 },
-    bet: {  marginBottom: 15 },
-    input: { border: 'none', backgroundColor: '#ddd', marginBottom: 10, padding: 8, fontSize: 18 },
-    betName: { fontSize: 20, fontWeight: 'bold' },
-    betType: { marginBottom: 0 },
-    button: { backgroundColor: 'black', color: 'white', outline: 'none', fontSize: 18, padding: '12px 0px' }
-}
-
-class portfolio extends React.Component {
-    render() {
-        return
-        // eslint-disable-next-line no-unused-expressions
-
-    }
-}
+ */
 
 /*
 function App() {
