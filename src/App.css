@@ -55,6 +55,18 @@
 }
 
 .table-header {
-  font-size: calc(10px + 5vmin);
+  font-size: calc(10px + 1vmin);
+}
+
+.float-left {
+  position: absolute;
+  left: 0px;
+}
+
+table {
+  border: 5px solid black;
+  border-radius: 5px;
+  table-layout: fixed;
+  width: 100%;
 }
 

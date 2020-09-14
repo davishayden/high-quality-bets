@@ -13,7 +13,7 @@ import './simple-grid.css'
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
 
-const initialState = { name: '', type: '' }
+const initialState = { name: '', type: '', return: 0, risk: 0, outcome: false }
 
 const App = () => {
     const [formState, setFormState] = useState(initialState)
@@ -51,65 +51,65 @@ const App = () => {
 
     return (
             <div className="App">
-
                 <div className="App-header">
                     <div className='container'>
-                    <div className="row">
-                        <div className="col-1">
-                            <div className="row">
-                                <div className="col-10">
-                                    <img src={logo} className="App-logo" alt="logo" />
+                        <div className="row">
+                            <div className="col-1">
+                                <div className="row">
+                                    <div className="col-10">
+                                        <img src={logo} className="App-logo" alt="logo" />
+                                    </div>
                                 </div>
                             </div>
-
-                        </div>
-
-                        <div className="col-9"></div>
-                        <div className="col-1  hidden-sm">
-
-                        <div className="Social-logo-stack">
+                            <div className="col-9"></div>
+                            <div className="col-1  hidden-sm">
+                            <div className="Social-logo-stack">
+                                    <a
+                                        className="App-link"
+                                        href="https://www.instagram.com/highqualitybets/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <img src={insta_icon} className="Social-logo" alt="logo" />
+                                    </a>
                                 <a
                                     className="App-link"
-                                    href="https://www.instagram.com/highqualitybets/"
+                                    href="https://www.twitter.com/highqualitybets/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <img src={insta_icon} className="Social-logo" alt="logo" />
+                                    <img src={twitter_icon} className="Social-logo" alt="logo" />
                                 </a>
-
-                            <a
-                                className="App-link"
-                                href="https://www.twitter.com/highqualitybets/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img src={twitter_icon} className="Social-logo" alt="logo" />
-                            </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className='col-12'>
+                                <div style={styles.container} >
+                                    <table>
+                                        <tr className="table-header">
+                                            <th>Bet</th>
+                                            <th className='hidden-sm'>Type</th>
+                                            <th>Risk</th>
+                                            <th>Return</th>
+                                            <th>Outcome</th>
+                                        </tr>
+                                        {
+                                            bets.map((bet, index) => (
+                                                <tr key={bet.id ? bet.id : index}>
+                                                    <td className='hidden-sm'>{bet.name}</td>
+                                                    <td>{bet.type}</td>
+                                                    <td>{bet.risk}</td>
+                                                    <td>{bet.return}</td>
+                                                    <td>{String(bet.outcome)}</td>
+                                                </tr>
+                                            ))
+                                        }
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    </div>
-                </div>
-            <h2>Bets Taken</h2>
-
-                <div style={styles.container} >
-                    <table  >
-                        <tr className="table-header">
-                            <th>Bet</th>
-                            <th className='hidden-sm'>Type</th>
-                            <th>Result</th>
-                        </tr>
-                        {
-                            bets.map((bet, index) => (
-                            <tr key={bet.id ? bet.id : index}>
-                                <td className='hidden-sm'>{bet.name}</td>
-                                <td>{bet.type}</td>
-                                <td>win</td>
-                            </tr>
-                            ))
-                        }
-                    </table>
-
                 </div>
             </div>
 
