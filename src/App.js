@@ -84,7 +84,7 @@ const App = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className='col-6'>
+                            <div className='col-4'>
                                 <div style={styles.container} >
                                     <table>
                                         <tr className="table-header">
@@ -109,10 +109,13 @@ const App = () => {
                                     </table>
                                 </div>
                             </div>
-                            <div className='col-6'>
+                            <div className='col-8'>
                                 <div className="row">
                                     <div className='col-12'>
-                                        <h2 className='center-text'>UP 500%</h2>
+                                        <iframe className='video-format' src="https://www.youtube.com/embed/omSxe8XRcsI"
+                                                frameBorder="0"
+                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                allowFullScreen></iframe>
                                     </div>
                                 </div>
 

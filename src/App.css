@@ -70,12 +70,22 @@
 }
 
 table {
-  height: 500px;
+  height: 600px;
   overflow-y: scroll;
   border: 3px solid black;
   border-radius: 15px;
   table-layout: fixed;
-  box-shadow: 10px 10px 8px  #888888
+  box-shadow: 6px 6px 8px  #FFB6C1
+}
+
+.video-format {
+  border: 3px solid black;
+  border-radius: 5px;
+  width: 560px;
+  height:315px;
+  background: black;
+  box-shadow: 6px 6px 8px  #23CE6B
+
 }
 
 .center-text {
