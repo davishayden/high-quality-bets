@@ -10,6 +10,11 @@
       "StackName": "amplify-highqualitybets-dev-151708",
       "StackId": "arn:aws:cloudformation:us-west-2:013426782317:stack/amplify-highqualitybets-dev-151708/8f8efba0-f52c-11ea-8e24-0a8bbb84e71d",
       "AmplifyAppId": "dv3ewvi9m4m0x"
+    },
+    "categories": {
+      "auth": {
+        "highqualitybets2676c839": {}
+      }
     }
   }
 }
