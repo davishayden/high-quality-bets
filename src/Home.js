@@ -33,47 +33,45 @@ const Home = () => {
             }
         }
         return (
-                <div className="App-header">
-                        <div className='container'>
-                            <div className="row">
-                                <div className='col-4'>
-                                    <div style={styles.container}>
-                                        <table>
-                                            <tr className="table-header">
-                                                <th>Bet</th>
-                                                <th>Type</th>
-                                                <th>Risk</th>
-                                                <th>Outcome</th>
-                                            </tr>
-                                            {
-                                                bets.map((bet, index) => (
-                                                    <tr className='table-row' key={bet.id ? bet.id : index}>
-                                                        <td>{bet.name}</td>
-                                                        <td>{bet.type}</td>
-                                                        <td>{bet.risk}</td>
-                                                        <td>{String(bet.outcome)}</td>
-                                                    </tr>
-                                                ))
-                                            }
-                                            <tr>
+            <div className='container'>
+                <div className="row">
+                    <div className='col-4'>
+                        <div style={styles.container}>
+                            <table>
+                                <tr className="table-header">
+                                    <th>Bet</th>
+                                    <th>Type</th>
+                                    <th>Risk</th>
+                                    <th>Outcome</th>
+                                </tr>
+                                {
+                                    bets.map((bet, index) => (
+                                        <tr className='table-row' key={bet.id ? bet.id : index}>
+                                            <td>{bet.name}</td>
+                                            <td>{bet.type}</td>
+                                            <td>{bet.risk}</td>
+                                            <td>{String(bet.outcome)}</td>
+                                        </tr>
+                                    ))
+                                }
+                                <tr>
 
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div className='col-8'>
-                    <div className="row">
-                        <div className='col-12'>
-                            <iframe className='video-format' src="https://www.youtube.com/embed/omSxe8XRcsI"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen></iframe>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div className='col-8'>
+                        <div className="row">
+                            <div className='col-12'>
+                                <iframe className='video-format' src="https://www.youtube.com/embed/omSxe8XRcsI"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
-                            </div>
-                        </div>
-                </div>
+            </div>
         )
 
 }

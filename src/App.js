@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react'
 import Amplify, { API, graphqlOperation } from 'aws-amplify'
 import { createBets } from './graphql/mutations'
 import { listBetss } from './graphql/queries'
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -14,14 +15,13 @@ import {
     Redirect
 } from "react-router-dom";
 import Home from './Home'
-
-
-
-import './App.css';
 import Login from './Login';
 
+import './App.css';
 import './simple-grid.css'
 import awsExports from "./aws-exports";
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+
 Amplify.configure(awsExports);
 
 const initialState = { name: '', type: '', return: 0, risk: 0, outcome: false }
@@ -29,73 +29,55 @@ const initialState = { name: '', type: '', return: 0, risk: 0, outcome: false }
 //const App = () => {
 class App extends React.Component {
     render() {
-
         return (
-            <div className="App">
-
-            <div className='row'>
-                    <div className="col-1">
-                        <div className="row">
-                            <div className="col-10">
-                                <img src={logo} className="App-logo" alt="logo"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-9">
-                        <Router>
-                            <div>
+            <Router>
+                <div className="App">
+                    <div className="App-header">
+                        <div className='row'>
+                                <div className="col-1">
+                                    <div className="row">
+                                        <div className="col-12">
+                                            <img src={logo} className="App-logo" alt="logo"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-10">
+                                </div>
+                                <div className="col-1">
+                                    <div className="Social-logo-stack">
+                                        <a
+                                            className="App-link"
+                                            href="https://www.instagram.com/highqualitybets/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <img src={insta_icon} className="Social-logo" alt="logo"/>
+                                        </a>
+                                        <a
+                                            className="App-link"
+                                            href="https://www.twitter.com/highqualitybets/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <img src={twitter_icon} className="Social-logo" alt="logo"/>
+                                        </a>
+                                    </div>
+                                </div>
                                 <Switch>
-                                    <Route
-                                        exact
-                                        path="/"
-                                        render={() => {
-                                            return (
-                                                    <Redirect to="/home" />
-                                            )
-                                        }}
-                                    />
-
-
-
-
-                                    <Route path="/login">
-                                        <Login/>
+                                    <Route exact path="/">
+                                        <Home />
                                     </Route>
-                                    <Route path="/home">
-                                        <Home/>
+                                    <Route exact path="/login">
+                                        <Login />
                                     </Route>
                                 </Switch>
-                            </div>
-                        </Router>
-                    </div>
-                    <div className="col-1  hidden-sm">
-                        <div className="Social-logo-stack">
-                            <a
-                                className="App-link"
-                                href="https://www.instagram.com/highqualitybets/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img src={insta_icon} className="Social-logo" alt="logo"/>
-                            </a>
-                            <a
-                                className="App-link"
-                                href="https://www.twitter.com/highqualitybets/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img src={twitter_icon} className="Social-logo" alt="logo"/>
-                            </a>
                         </div>
                     </div>
-            </div>
-            </div>
-
-
+                </div>
+            </Router>
         )
     }
 }
-
 
 export default App;
 
