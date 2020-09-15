@@ -41,7 +41,6 @@ const Home = () => {
                                 <tr className="table-header">
                                     <th>Bet</th>
                                     <th>Type</th>
-                                    <th>Risk</th>
                                     <th>Outcome</th>
                                 </tr>
                                 {
@@ -49,7 +48,6 @@ const Home = () => {
                                         <tr className='table-row' key={bet.id ? bet.id : index}>
                                             <td>{bet.name}</td>
                                             <td>{bet.type}</td>
-                                            <td>{bet.risk}</td>
                                             <td>{String(bet.outcome)}</td>
                                         </tr>
                                     ))
